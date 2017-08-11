@@ -8,49 +8,50 @@ Dumps decrypted iPhone Applications to a file - better solution than those GDB s
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
+#include <dlfcn.h>
 #include <mach-o/fat.h>
 #include <mach-o/loader.h>
-#import <Foundation/Foundation.h>
-
-struct ProgramVars {
-  struct mach_header*	mh;
-  int*		NXArgcPtr;
-  const char***	NXArgvPtr;
-  const char***	environPtr;
-  const char**	__prognamePtr;
-};
+#include <mach-o/dyld.h>
+#include <Foundation/Foundation.h>
 
 #define swap32(value) (((value & 0xFF000000) >> 24) | ((value & 0x00FF0000) >> 8) | ((value & 0x0000FF00) << 8) | ((value & 0x000000FF) << 24) )
 
-__attribute__((constructor))
-void dumptofile(int argc, const char **argv, const char **envp, const char **apple, struct ProgramVars *pvars)
-{	
+void dumptofile(const char *path, const struct mach_header *mh){	
 	struct load_command *lc;
 	struct encryption_info_command *eic;
 	struct fat_header *fh;
 	struct fat_arch *arch;
-	struct mach_header *mh;
 	char buffer[1024];
 	char rpath[4096],npath[4096]; /* should be big enough for PATH_MAX */
 	unsigned int fileoffs = 0, off_cryptid = 0, restsize;
 	int i,fd,outfd,r,n,toread;
 	char *tmp;
+
+	if (realpath(path, rpath) == NULL) {
+		strlcpy(rpath, path, sizeof(rpath));
+	}
 	
-    NSLog(@"mach-o decryption dumper\n\n");
-		
-    NSLog(@"DISCLAIMER: This tool is only meant for security research purposes, not for application crackers.\n\n");
-	
+	/* extract basename */
+	tmp = strrchr(rpath, '/');
+	printf("\n\n");
+	if (tmp == NULL) {
+		printf("[-] Unexpected error with filename.\n");
+		_exit(1);
+	} else {
+		printf("[+] Dumping %s\n", tmp+1);
+	}
+
 	/* detect if this is a arm64 binary */
-	if (pvars->mh->magic == MH_MAGIC_64) {
-		lc = (struct load_command *)((unsigned char *)pvars->mh + sizeof(struct mach_header_64));
-        NSLog(@"[+] detected 64bit ARM binary in memory.\n");
+	if (mh->magic == MH_MAGIC_64) {
+		lc = (struct load_command *)((unsigned char *)mh + sizeof(struct mach_header_64));
+		NSLog(@"[+] detected 64bit ARM binary in memory.\n");
 	} else { /* we might want to check for other errors here, too */
-		lc = (struct load_command *)((unsigned char *)pvars->mh + sizeof(struct mach_header));
-        NSLog(@"[+] detected 32bit ARM binary in memory.\n");
+		lc = (struct load_command *)((unsigned char *)mh + sizeof(struct mach_header));
+		NSLog(@"[+] detected 32bit ARM binary in memory.\n");
 	}
 	
 	/* searching all load commands for an LC_ENCRYPTION_INFO load command */
-	for (i=0; i<pvars->mh->ncmds; i++) {
+	for (i=0; i<mh->ncmds; i++) {
 		/*printf("Load Command (%d): %08x\n", i, lc->cmd);*/
 		
 		if (lc->cmd == LC_ENCRYPTION_INFO || lc->cmd == LC_ENCRYPTION_INFO_64) {
@@ -60,15 +61,11 @@ void dumptofile(int argc, const char **argv, const char **envp, const char **app
 			if (eic->cryptid == 0) {
 				break;
 			}
-			off_cryptid=(off_t)((void*)&eic->cryptid - (void*)pvars->mh);
+			off_cryptid=(off_t)((void*)&eic->cryptid - (void*)mh);
 
-            NSLog(@"[+] offset to cryptid found: @%p(from %p) = %x\n", &eic->cryptid, pvars->mh, off_cryptid);
+            NSLog(@"[+] offset to cryptid found: @%p(from %p) = %x\n", &eic->cryptid, mh, off_cryptid);
             
             NSLog(@"[+] Found encrypted data at address %08x of length %u bytes - type %u.\n", eic->cryptoff, eic->cryptsize, eic->cryptid);
-			
-			if (realpath(argv[0], rpath) == NULL) {
-				strlcpy(rpath, argv[0], sizeof(rpath));
-			}
 			
             NSLog(@"[+] Opening %s for reading.\n", rpath);
 			fd = open(rpath, O_RDONLY);
@@ -91,7 +88,7 @@ void dumptofile(int argc, const char **argv, const char **envp, const char **app
                 NSLog(@"[+] Executable is a FAT image - searching for right architecture\n");
 				arch = (struct fat_arch *)&fh[1];
 				for (i=0; i<swap32(fh->nfat_arch); i++) {
-					if ((pvars->mh->cputype == swap32(arch->cputype)) && (pvars->mh->cpusubtype == swap32(arch->cpusubtype))) {
+					if ((mh->cputype == swap32(arch->cputype)) && (mh->cpusubtype == swap32(arch->cpusubtype))) {
 						fileoffs = swap32(arch->offset);
 						NSLog(@"[+] Correct arch is at offset %u in the file\n", fileoffs);
 						break;
@@ -106,13 +103,6 @@ void dumptofile(int argc, const char **argv, const char **envp, const char **app
 				NSLog(@"[+] Executable is a plain MACH-O image\n");
 			} else {
 				NSLog(@"[-] Executable is of unknown type\n");
-				return;
-			}
-
-			/* extract basename */
-			tmp = strrchr(rpath, '/');
-			if (tmp == NULL) {
-				NSLog(@"[-] Unexpected error with filename.\n");
 				return;
 			}
             
@@ -177,7 +167,7 @@ void dumptofile(int argc, const char **argv, const char **envp, const char **app
 			
 			/* now write the previously encrypted data */
 			NSLog(@"[+] Dumping the decrypted data into the file\n");
-			r = write(outfd, (unsigned char *)pvars->mh + eic->cryptoff, eic->cryptsize);
+			r = write(outfd, (unsigned char *)mh + eic->cryptoff, eic->cryptsize);
 			if (r != eic->cryptsize) {
 				NSLog(@"[-] Error writing file\n");
 				return;
@@ -224,4 +214,17 @@ void dumptofile(int argc, const char **argv, const char **envp, const char **app
 	}
 	NSLog(@"[-] This mach-o file is not encrypted. Nothing was decrypted.\n");
     return;
+}
+
+static void image_added(const struct mach_header *mh, intptr_t slide) {
+	Dl_info image_info;
+	int result = dladdr(mh, &image_info);
+	dumptofile(image_info.dli_fname, mh);
+}
+
+__attribute__((constructor))
+static void dumpexecutable() {
+	printf("mach-o decryption dumper\n\n");
+	printf("DISCLAIMER: This tool is only meant for security research purposes, not for application crackers.");
+	_dyld_register_func_for_add_image(&image_added);
 }
