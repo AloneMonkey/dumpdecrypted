@@ -1,8 +1,11 @@
 Dumps decrypted mach-o files from encrypted `applications`、`framework` or `app extensions`.    
 
+### You should install [MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) first 
+
 
 # Usage
-1) \# edit `dumpdecrypted.plist`   
+
+1) open `dumpdecrypted.xcodeproj` edit `dumpdecrypted.plist`   
 
 ```
 {
@@ -12,7 +15,10 @@ Dumps decrypted mach-o files from encrypted `applications`、`framework` or `app
 }
 ```
 
-2) \# scp dumpdecrypted.plist dumpdecrypted.dylib root@xxx:/Library/MobileSubstrate/DynamicLibraries/  
+2) Set Build Settings
+
+* MonkeyDevDeviceIP      
+* MonkeyDevDevicePort
 
 3) launch application or app extension
 

@@ -1,7 +1,0 @@
-{
-	Filter = {
-		Bundles = (
-			"target.bundle.id",
-		);
-	};
-}
