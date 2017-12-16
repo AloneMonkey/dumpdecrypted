@@ -6,7 +6,7 @@
 	<dict>
 		<key>Bundles</key>
 		<array>
-			<string>com.tencent.xin</string>
+			<string>com.target.bundleid</string>
 		</array>
 	</dict>
 </dict>

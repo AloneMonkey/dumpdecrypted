@@ -7,111 +7,111 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8CA699021FAA1B050035A8B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA699011FAA1B050035A8B3 /* Foundation.framework */; };
-		8CA6990A1FAA1B050035A8B3 /* dumpdecrypted.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA699091FAA1B050035A8B3 /* dumpdecrypted.m */; };
+		8C0441D11FE54F3100DD366C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C0441D01FE54F3100DD366C /* Foundation.framework */; };
+		8C0441D91FE54F3100DD366C /* dumpdecrypted.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C0441D81FE54F3100DD366C /* dumpdecrypted.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8CA698FE1FAA1B050035A8B3 /* dumpdecrypted.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = dumpdecrypted.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CA699011FAA1B050035A8B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8CA699061FAA1B050035A8B3 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
-		8CA699081FAA1B050035A8B3 /* dumpdecrypted-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dumpdecrypted-Prefix.pch"; sourceTree = "<group>"; };
-		8CA699091FAA1B050035A8B3 /* dumpdecrypted.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dumpdecrypted.m; sourceTree = "<group>"; };
-		8CA6990E1FAA1B050035A8B3 /* dumpdecrypted.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = dumpdecrypted.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/dumpdecrypted.plist; sourceTree = "<group>"; };
+		8C0441CD1FE54F3100DD366C /* dumpdecrypted.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = dumpdecrypted.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0441D01FE54F3100DD366C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8C0441D51FE54F3100DD366C /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		8C0441D71FE54F3100DD366C /* dumpdecrypted-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dumpdecrypted-Prefix.pch"; sourceTree = "<group>"; };
+		8C0441D81FE54F3100DD366C /* dumpdecrypted.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dumpdecrypted.m; sourceTree = "<group>"; };
+		8C0441DD1FE54F3100DD366C /* dumpdecrypted.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = dumpdecrypted.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/dumpdecrypted.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8CA698FA1FAA1B050035A8B3 /* Frameworks */ = {
+		8C0441C91FE54F3100DD366C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CA699021FAA1B050035A8B3 /* Foundation.framework in Frameworks */,
+				8C0441D11FE54F3100DD366C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8CA698F41FAA1B050035A8B3 = {
+		8C0441C31FE54F3100DD366C = {
 			isa = PBXGroup;
 			children = (
-				8CA699031FAA1B050035A8B3 /* dumpdecrypted */,
-				8CA699001FAA1B050035A8B3 /* Frameworks */,
-				8CA698FF1FAA1B050035A8B3 /* Products */,
+				8C0441D21FE54F3100DD366C /* dumpdecrypted */,
+				8C0441CF1FE54F3100DD366C /* Frameworks */,
+				8C0441CE1FE54F3100DD366C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8CA698FF1FAA1B050035A8B3 /* Products */ = {
+		8C0441CE1FE54F3100DD366C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8CA698FE1FAA1B050035A8B3 /* dumpdecrypted.dylib */,
+				8C0441CD1FE54F3100DD366C /* dumpdecrypted.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8CA699001FAA1B050035A8B3 /* Frameworks */ = {
+		8C0441CF1FE54F3100DD366C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8CA699011FAA1B050035A8B3 /* Foundation.framework */,
+				8C0441D01FE54F3100DD366C /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		8CA699031FAA1B050035A8B3 /* dumpdecrypted */ = {
+		8C0441D21FE54F3100DD366C /* dumpdecrypted */ = {
 			isa = PBXGroup;
 			children = (
-				8CA699091FAA1B050035A8B3 /* dumpdecrypted.m */,
-				8CA699041FAA1B050035A8B3 /* Package */,
-				8CA699071FAA1B050035A8B3 /* Supporting Files */,
+				8C0441D81FE54F3100DD366C /* dumpdecrypted.m */,
+				8C0441D31FE54F3100DD366C /* Package */,
+				8C0441D61FE54F3100DD366C /* Supporting Files */,
 			);
 			path = dumpdecrypted;
 			sourceTree = "<group>";
 		};
-		8CA699041FAA1B050035A8B3 /* Package */ = {
+		8C0441D31FE54F3100DD366C /* Package */ = {
 			isa = PBXGroup;
 			children = (
-				8CA699051FAA1B050035A8B3 /* DEBIAN */,
-				8CA6990B1FAA1B050035A8B3 /* Library */,
+				8C0441D41FE54F3100DD366C /* DEBIAN */,
+				8C0441DA1FE54F3100DD366C /* Library */,
 			);
 			name = Package;
 			sourceTree = "<group>";
 		};
-		8CA699051FAA1B050035A8B3 /* DEBIAN */ = {
+		8C0441D41FE54F3100DD366C /* DEBIAN */ = {
 			isa = PBXGroup;
 			children = (
-				8CA699061FAA1B050035A8B3 /* control */,
+				8C0441D51FE54F3100DD366C /* control */,
 			);
 			name = DEBIAN;
 			sourceTree = "<group>";
 		};
-		8CA699071FAA1B050035A8B3 /* Supporting Files */ = {
+		8C0441D61FE54F3100DD366C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8CA699081FAA1B050035A8B3 /* dumpdecrypted-Prefix.pch */,
+				8C0441D71FE54F3100DD366C /* dumpdecrypted-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		8CA6990B1FAA1B050035A8B3 /* Library */ = {
+		8C0441DA1FE54F3100DD366C /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				8CA6990C1FAA1B050035A8B3 /* MobileSubstrate */,
+				8C0441DB1FE54F3100DD366C /* MobileSubstrate */,
 			);
 			name = Library;
 			sourceTree = "<group>";
 		};
-		8CA6990C1FAA1B050035A8B3 /* MobileSubstrate */ = {
+		8C0441DB1FE54F3100DD366C /* MobileSubstrate */ = {
 			isa = PBXGroup;
 			children = (
-				8CA6990D1FAA1B050035A8B3 /* DynamicLibraries */,
+				8C0441DC1FE54F3100DD366C /* DynamicLibraries */,
 			);
 			name = MobileSubstrate;
 			sourceTree = "<group>";
 		};
-		8CA6990D1FAA1B050035A8B3 /* DynamicLibraries */ = {
+		8C0441DC1FE54F3100DD366C /* DynamicLibraries */ = {
 			isa = PBXGroup;
 			children = (
-				8CA6990E1FAA1B050035A8B3 /* dumpdecrypted.plist */,
+				8C0441DD1FE54F3100DD366C /* dumpdecrypted.plist */,
 			);
 			name = DynamicLibraries;
 			sourceTree = "<group>";
@@ -119,7 +119,7 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		8CA698FB1FAA1B050035A8B3 /* Headers */ = {
+		8C0441CA1FE54F3100DD366C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -129,14 +129,14 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8CA698FD1FAA1B050035A8B3 /* dumpdecrypted */ = {
+		8C0441CC1FE54F3100DD366C /* dumpdecrypted */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8CA699111FAA1B050035A8B3 /* Build configuration list for PBXNativeTarget "dumpdecrypted" */;
+			buildConfigurationList = 8C0441E01FE54F3100DD366C /* Build configuration list for PBXNativeTarget "dumpdecrypted" */;
 			buildPhases = (
-				8CA698F91FAA1B050035A8B3 /* Sources */,
-				8CA698FA1FAA1B050035A8B3 /* Frameworks */,
-				8CA698FB1FAA1B050035A8B3 /* Headers */,
-				8CA698FC1FAA1B050035A8B3 /* ShellScript */,
+				8C0441C81FE54F3100DD366C /* Sources */,
+				8C0441C91FE54F3100DD366C /* Frameworks */,
+				8C0441CA1FE54F3100DD366C /* Headers */,
+				8C0441CB1FE54F3100DD366C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -144,42 +144,42 @@
 			);
 			name = dumpdecrypted;
 			productName = dumpdecrypted;
-			productReference = 8CA698FE1FAA1B050035A8B3 /* dumpdecrypted.dylib */;
+			productReference = 8C0441CD1FE54F3100DD366C /* dumpdecrypted.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8CA698F51FAA1B050035A8B3 /* Project object */ = {
+		8C0441C41FE54F3100DD366C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0900;
 				TargetAttributes = {
-					8CA698FD1FAA1B050035A8B3 = {
+					8C0441CC1FE54F3100DD366C = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 8CA698F81FAA1B050035A8B3 /* Build configuration list for PBXProject "dumpdecrypted" */;
+			buildConfigurationList = 8C0441C71FE54F3100DD366C /* Build configuration list for PBXProject "dumpdecrypted" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 8CA698F41FAA1B050035A8B3;
-			productRefGroup = 8CA698FF1FAA1B050035A8B3 /* Products */;
+			mainGroup = 8C0441C31FE54F3100DD366C;
+			productRefGroup = 8C0441CE1FE54F3100DD366C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8CA698FD1FAA1B050035A8B3 /* dumpdecrypted */,
+				8C0441CC1FE54F3100DD366C /* dumpdecrypted */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8CA698FC1FAA1B050035A8B3 /* ShellScript */ = {
+		8C0441CB1FE54F3100DD366C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,18 +195,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8CA698F91FAA1B050035A8B3 /* Sources */ = {
+		8C0441C81FE54F3100DD366C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CA6990A1FAA1B050035A8B3 /* dumpdecrypted.m in Sources */,
+				8C0441D91FE54F3100DD366C /* dumpdecrypted.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		8CA6990F1FAA1B050035A8B3 /* Release */ = {
+		8C0441DE1FE54F3100DD366C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -232,7 +232,7 @@
 			};
 			name = Release;
 		};
-		8CA699101FAA1B050035A8B3 /* Debug */ = {
+		8C0441DF1FE54F3100DD366C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -265,7 +265,7 @@
 			};
 			name = Debug;
 		};
-		8CA699121FAA1B050035A8B3 /* Release */ = {
+		8C0441E11FE54F3100DD366C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
@@ -283,17 +283,18 @@
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;
 				MonkeyDevCopyOnBuild = NO;
-				MonkeyDevDeviceIP = localhost;
-				MonkeyDevDevicePort = 2222;
+				MonkeyDevDeviceIP = "";
+				MonkeyDevDevicePassword = "";
+				MonkeyDevDevicePort = "";
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
-				MonkeyDevkillProcessOnInstall = "";
+				MonkeyDevkillProcessOnInstall = SpringBoard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		8CA699131FAA1B050035A8B3 /* Debug */ = {
+		8C0441E21FE54F3100DD366C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
@@ -311,11 +312,12 @@
 				MonkeyDevBuildPackageOnAnyBuild = NO;
 				MonkeyDevClearUiCacheOnInstall = NO;
 				MonkeyDevCopyOnBuild = NO;
-				MonkeyDevDeviceIP = localhost;
-				MonkeyDevDevicePort = 2222;
+				MonkeyDevDeviceIP = "";
+				MonkeyDevDevicePassword = "";
+				MonkeyDevDevicePort = "";
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
-				MonkeyDevkillProcessOnInstall = "";
+				MonkeyDevkillProcessOnInstall = SpringBoard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -324,25 +326,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8CA698F81FAA1B050035A8B3 /* Build configuration list for PBXProject "dumpdecrypted" */ = {
+		8C0441C71FE54F3100DD366C /* Build configuration list for PBXProject "dumpdecrypted" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8CA6990F1FAA1B050035A8B3 /* Release */,
-				8CA699101FAA1B050035A8B3 /* Debug */,
+				8C0441DE1FE54F3100DD366C /* Release */,
+				8C0441DF1FE54F3100DD366C /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8CA699111FAA1B050035A8B3 /* Build configuration list for PBXNativeTarget "dumpdecrypted" */ = {
+		8C0441E01FE54F3100DD366C /* Build configuration list for PBXNativeTarget "dumpdecrypted" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8CA699121FAA1B050035A8B3 /* Release */,
-				8CA699131FAA1B050035A8B3 /* Debug */,
+				8C0441E11FE54F3100DD366C /* Release */,
+				8C0441E21FE54F3100DD366C /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8CA698F51FAA1B050035A8B3 /* Project object */;
+	rootObject = 8C0441C41FE54F3100DD366C /* Project object */;
 }

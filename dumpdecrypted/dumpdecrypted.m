@@ -1,3 +1,7 @@
+#if TARGET_OS_SIMULATOR
+#error Do not support the simulator, please use the real iPhone Device.
+#endif
+
 /*
  
  Dumps decrypted iPhone Applications to a file - better solution than those GDB scripts for non working GDB versions
