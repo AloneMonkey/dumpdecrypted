@@ -1,3 +1,5 @@
+It is recommended to use [frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump) instead!
+
 Dumps decrypted mach-o files from encrypted `applications`、`framework` or `app extensions`.    
 
 ### You should install [MonkeyDev](https://github.com/AloneMonkey/MonkeyDev) first 
